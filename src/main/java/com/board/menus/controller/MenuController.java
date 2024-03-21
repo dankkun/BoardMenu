@@ -35,71 +35,43 @@ public class MenuController {
    //@RequestMapping("/Menus/WriteForm")
    @RequestMapping("/WriteForm")   // /Menus/WriteForm
    public   String   writeForm() {
-      return "menus/write";  // /WEB-INF/views/ + menus/write + .jsp`
+      return "menus/write";  // /WEB-INF/views/ + menus/write + .jsp
    }
-   
-   // -------------------------------------------------------------------
-   
-   /*
-   // 메뉴 저장
-   // /Menus/Write?menu_id=MENU02&menu_name=JSP&menu_seq=2
-   //@RequestMapping("/Menus/Write")
-   @RequestMapping("/Write")  
-   //public   String   write( 
-   //       String menu_id, String menu_name, int menu_seq) { 
-    // 인식안됨(error)     menu_id 를 찾을 수 없다
-   public   String   write( MenuVo  menuVo, Model model ) {   // Vo 로 작업해야한다
-      // 넘어온 데이터를 db 에 저장하고      
-      menuMapper.insertMenu( menuVo );
-      // menuMapper.insertMenu(menu_id, menu_name, menu_seq); // error
-
-      
-      return "redirect:/Menus/List"; 
-   }
-   */
-   @RequestMapping("/WriteForm2")
-   public String writeForm2() {
-	   
-	   return "menus/write2.jsp";
-   }
-   
-
-   
-   @RequestMapping("/Write2")
-   public String write2( MenuVo menuVo ) {
-	   menuMapper.insertMenuByName( menuVo );
-	   return "redirect:menus/list";
-   }
-   
-   
    
    @RequestMapping("/Write") 
    @ResponseBody
    public String write( MenuVo menuVo, Model model ) {
-      
-      // 추가
-      menuMapper.insertMenu( menuVo );
-      
-      String html = "<script>";
-      html += "alert('추가되었습니다');";
-      html += "location.href='/Menus/List';";
-      html += "</script>";
-      return html;
+	
+	   menuMapper.insertMenu( menuVo );
+	   
+	   String html = "<script>";
+	   html += "alert('추가되었습니다');";
+	   html += "location.href='/Menus/List';";
+	   html += "</script>";
+	   return html;
    }
    
-   // -------------------------------------------------------------------
    
-   /*
-   // 메뉴삭제
-   @RequestMapping("/Delete")
-   public String delete( MenuVo menuVo, Model model ) {
-      
-      // 삭제
-      menuMapper.deleteMenu( menuVo );
 
-      return "redirect:/Menus/List";
+   @RequestMapping("/WriteForm2")
+   public String writeForm2() {
+	   return "menus/write2";
    }
-   */
+   
+   @RequestMapping("/Write2")
+   @ResponseBody
+   public String write2( MenuVo menuVo ) {
+	   menuMapper.insertMenuByName( menuVo );
+	   
+	   String html = "<script>";
+	      html += "alert('추가되었습니다');";
+	      html += "location.href='/Menus/List';";
+	      html += "</script>";
+	      return html;
+   }
+   
+   
+ 
    // 삭제완료 알림창 기능 추가
    @RequestMapping("/Delete")
    @ResponseBody
@@ -115,5 +87,15 @@ public class MenuController {
       return html;
    }
    
-   
+   @RequestMapping("/UpdateForm")
+   public String updateForm( MenuVo menuVo ) {
+	   
+      return "menus/update";
+   }
+      
+      @RequestMapping("/Update")
+      public String update( MenuVo menuVo) {
+    	  
+    	  return "redirect:Menus/List";
+      }
 }
