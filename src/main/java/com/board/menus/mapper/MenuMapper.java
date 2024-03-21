@@ -1,6 +1,6 @@
 package com.board.menus.mapper;
 
-import java.util.ArrayList;
+import java.util.List;
 
 import org.apache.ibatis.annotations.Mapper;
 
@@ -8,10 +8,14 @@ import com.board.menus.domain.MenuVo;
 
 @Mapper
 public interface MenuMapper {
-
+	
 	void insertMenu(MenuVo menuVo);
+	
+	List<MenuVo> getMenuList();
 
-	ArrayList<MenuVo> getMenuList();
+	void deleteMenu(MenuVo menuVo) ;
+
+	void insertMenuByName(MenuVo menuVo);
 
 	
 

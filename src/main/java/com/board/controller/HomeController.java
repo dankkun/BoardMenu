@@ -5,9 +5,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 public class HomeController {
-
-	@RequestMapping("/")
-	public String home() {
-		return "home";
-	}
+   
+   // http://localhost:9090
+   @RequestMapping("/")
+   public  String   home() {
+      return "home";
+   }
+   
 }
