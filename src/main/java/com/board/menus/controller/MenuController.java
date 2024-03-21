@@ -90,7 +90,7 @@ public class MenuController {
    @RequestMapping("/UpdateForm")
    public String updateForm( MenuVo menuVo ) {
 	   
-      return "menus/update";
+      return "menus/update";    
    }
       
       @RequestMapping("/Update")
