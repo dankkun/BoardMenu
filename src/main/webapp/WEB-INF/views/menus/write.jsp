@@ -24,7 +24,7 @@
    td:not([colspan]):first-child {
       background: black;
       color : white;
-      font-weight: bold;
+      font-weight: bold; 
    }
 
 </style>
