@@ -9,7 +9,7 @@ public class HomeController {
    // http://localhost:9090
    @RequestMapping("/")
    public  String   home() {
-      return "home";
+      return "home";    
    }
    
 }

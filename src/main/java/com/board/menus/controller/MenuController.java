@@ -96,6 +96,6 @@ public class MenuController {
       @RequestMapping("/Update")
       public String update( MenuVo menuVo) {
     	  
-    	  return "redirect:Menus/List";   
+    	  return "redirect:Menus/List";     
       }
 }
