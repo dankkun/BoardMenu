@@ -101,6 +101,7 @@ public class MenuController {
       @RequestMapping("/Update")
       public String update( MenuVo menuVo) {
     	  
+    	  menuMapper.updateMenu(menuVo);
     	  return "redirect:Menus/List";   
       }
 }
