@@ -19,6 +19,8 @@ public interface MenuMapper {
 
 	void updateMenu(MenuVo menuVo);
 
+	MenuVo getMenu(String menu_id);
+
 	
 
 }

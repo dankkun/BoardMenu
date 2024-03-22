@@ -88,9 +88,14 @@ public class MenuController {
    }
    
    @RequestMapping("/UpdateForm")
-   public String updateForm( MenuVo menuVo ) {
+   public String updateForm( MenuVo menuVo, Model model ) {
+	   System.out.println("menuVo:" + menuVo);
+	   String menu_id = menuVo.getMenu_id();	
+	   MenuVo menu = menuMapper.getMenu( menu_id );
+      
+	   model.addAttribute("menu", menu);
 	   
-      return "menus/update";    
+	   return "menus/update";    
    }
       
       @RequestMapping("/Update")
