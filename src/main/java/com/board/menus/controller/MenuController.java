@@ -102,6 +102,6 @@ public class MenuController {
       public String update( MenuVo menuVo) {
     	  
     	  menuMapper.updateMenu(menuVo);
-    	  return "redirect:Menus/List";   
+    	  return "redirect:/Menus/List";   
       }
 }

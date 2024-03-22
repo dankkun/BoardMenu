@@ -45,6 +45,7 @@
             <td>MENU_ID</td>
             <td>MENU_NAME</td>
             <td>MENU_SEQ</td>
+            <td>삭제</td>
             <td>수정</td>
          </tr>
          <tr>

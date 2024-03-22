@@ -32,7 +32,7 @@
 <body>
   <main>
    <h2>메뉴 수정</h2>
-   <form action="/Menus/UpdateForm" method="GET">
+   <form action="/Menus/Update" method="GET">
    <table>
     <tr>
       <td>메뉴 아이디</td>
